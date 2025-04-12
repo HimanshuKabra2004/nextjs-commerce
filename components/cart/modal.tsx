@@ -134,14 +134,8 @@ export default function CartModal() {
                                     className="h-full w-full object-cover"
                                     width={64}
                                     height={64}
-                                    alt={
-                                      item.merchandise.product.featuredImage
-                                        .altText ||
-                                      item.merchandise.product.title
-                                    }
-                                    src={
-                                      item.merchandise.product.featuredImage.url
-                                    }
+                                    alt={item.merchandise.product.featuredImage.altText || item.merchandise.product.title}
+                                    src={item.merchandise.product.featuredImage.url}
                                   />
                                 </div>
                                 <Link
@@ -153,8 +147,7 @@ export default function CartModal() {
                                     <span className="leading-tight">
                                       {item.merchandise.product.title}
                                     </span>
-                                    {item.merchandise.title !==
-                                    DEFAULT_OPTION ? (
+                                    {item.merchandise.title !== DEFAULT_OPTION ? (
                                       <p className="text-sm text-neutral-500 dark:text-neutral-400">
                                         {item.merchandise.title}
                                       </p>
@@ -166,9 +159,7 @@ export default function CartModal() {
                                 <Price
                                   className="flex justify-end space-y-2 text-right text-sm"
                                   amount={item.cost.totalAmount.amount}
-                                  currencyCode={
-                                    item.cost.totalAmount.currencyCode
-                                  }
+                                  currencyCode={item.cost.totalAmount.currencyCode}
                                 />
                                 <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-neutral-200 dark:border-neutral-700">
                                   <EditItemQuantityButton
